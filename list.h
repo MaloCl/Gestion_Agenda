@@ -18,5 +18,6 @@ void displayByLevelList(LevelList *list,int level);
 void displayAllLevelList(LevelList *list);
 void addCellToListByLevel(LevelList *list,Cell *cell,int level);
 void addCellToList(LevelList *list, Cell *cell);
+void displayByLevelListJolie(LevelList *list,int level);
 
 #endif //GESTIONAGENDA_LIST_H

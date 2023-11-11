@@ -41,13 +41,40 @@ void displayByLevelList(LevelList *list,int level){
     printf("-->NULL");
 }
 
+void displayByLevelListJolie(LevelList *list,int level){
+    Cell *temp=list->heads[level];
+    Cell *temp2=list->heads[0];
+    int cpt;
+    printf("[list head_%d @-]",level);
+    while(temp!=NULL){
+        cpt=0;
+        while(temp2->value!=temp->value){
+            temp2=temp2->arrayNext[0];
+            cpt++;
+        }
+        temp2=temp2->arrayNext[0];
+        for(int i=0;i<cpt;i++){
+            printf("----------");
+        }
+        printf("-->");
+        printf("[%d|@-]",temp->value);
+        temp=temp->arrayNext[level];
+    }
+    if(temp2!=NULL){
+        printf("----------");
+    }
+    printf("-->NULL");
+}
 
 void displayAllLevelList(LevelList *list){
     for (int i=0; i<list->maxLevel;i++){
-        displayByLevelList(list,i);
+        displayByLevelListJolie(list,i);
+        printf("\n");
         printf("\n");
     }
 }
+
+
 
 void addCellToListByLevel(LevelList *list,Cell *cell,int level){
     if(level<list->maxLevel){

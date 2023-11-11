@@ -3,4 +3,11 @@ project(GestionAgenda C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(GestionAgenda main.c)
+add_executable(GestionAgenda main.c
+        timer.c
+        timer.h
+        cell.c
+        cell.h
+        list.c
+        list.h
+)

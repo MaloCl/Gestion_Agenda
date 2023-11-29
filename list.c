@@ -4,104 +4,110 @@
 
 #include "list.h"
 
-LevelList *createLevelList(int maxLevel){
+LevelList *createLevelList(int nbcases){
     LevelList *newList = (LevelList*)malloc(sizeof(LevelList));
-    newList->heads=(Cell**)malloc(maxLevel*sizeof(Cell*));
-    for(int i=0;i<maxLevel;i++){
+    newList->heads=(Cell**)malloc(calculLevel(nbcases)*sizeof(Cell*));
+    newList->maxLevel=calculLevel(nbcases);
+    for(int i=0;i< calculLevel(nbcases);i++){
         newList->heads[i]=NULL;
     }
-    newList->maxLevel=maxLevel;
-    newList->lastPosition=0;
     return newList;
 }
 
 
-/* void addHeadCellToList(LevelList *list,Cell *cell){
-    if(cell->level<=list->maxLevel && cell->level>=list->lastPosition){
-        for(int i=list->lastPosition;i<cell->level;i++){
-            list->heads[i]=cell;
-            list->lastPosition++;
-        }
-    }
-    else{
-        printf("Cell too big, can't be added !");
-    }
-}
-*/
-
-
 void displayByLevelList(LevelList *list,int level){
-    Cell *temp=list->heads[level];
-    printf("[list head_%d @-]",level);
-    while(temp!=NULL){
-        printf("-->");
-        printf("[%d|@-]",temp->value);
-        temp=temp->arrayNext[level];
-    }
-    printf("-->NULL");
-}
-
-void displayByLevelListJolie(LevelList *list,int level){
     Cell *temp=list->heads[level];
     Cell *temp2=list->heads[0];
     int cpt;
     printf("[list head_%d @-]",level);
     while(temp!=NULL){
-        cpt=0;
         while(temp2->value!=temp->value){
+            printf("---------");
+            cpt=temp2->value;
+            while(cpt>9){
+                printf("-");
+                cpt=cpt/10;
+            }
             temp2=temp2->arrayNext[0];
-            cpt++;
         }
         temp2=temp2->arrayNext[0];
-        for(int i=0;i<cpt;i++){
-            printf("----------");
-        }
         printf("-->");
         printf("[%d|@-]",temp->value);
         temp=temp->arrayNext[level];
     }
     if(temp2!=NULL){
-        printf("----------");
+        while(temp2!=NULL){
+            printf("---------");
+            cpt=temp2->value;
+            while(cpt>9){
+                printf("-");
+                cpt=cpt/10;
+            }
+            temp2=temp2->arrayNext[0];
+        }
     }
     printf("-->NULL");
 }
 
 void displayAllLevelList(LevelList *list){
-    for (int i=0; i<list->maxLevel;i++){
-        displayByLevelListJolie(list,i);
-        printf("\n");
+    for (int i=0; i<=list->maxLevel;i++){
+        displayByLevelList(list,i);
         printf("\n");
     }
 }
 
 
 
-void addCellToListByLevel(LevelList *list,Cell *cell,int level){
-    if(level<list->maxLevel){
-        Cell *temp=list->heads[level];
-        if(list->heads[level]==NULL ){
-            list->heads[level]=cell;
+void addCellToListLeveLZero(LevelList *list,Cell *cell){
+    if(list->heads[0]==NULL){
+        list->heads[0]=cell;
+    }else if(list->heads[0]->value>cell->value){
+        cell->arrayNext[0]=list->heads[0];
+        list->heads[0]=cell;
+    }else {
+        Cell* temp=list->heads[0];
+        while(temp->arrayNext[0] != NULL && temp->arrayNext[0]->value < cell->value){
+            temp=temp->arrayNext[0];
         }
-        else if(cell->value<temp->value){
-            cell->arrayNext[level]=temp;
-            list->heads[level]=cell;
-        }
-        else{
-            while(temp->arrayNext[level]!=NULL && cell->value>temp->arrayNext[level]->value){
-                temp = temp->arrayNext[level];
-            }
-            if(temp->arrayNext[level]==NULL){
-                temp->arrayNext[level]=cell;
-            }else{
-                temp->arrayNext[level]->arrayNext[level]=cell->arrayNext[level];
-                temp->arrayNext[level]=cell;
-            }
+        if(temp->arrayNext[0]==NULL){
+            temp->arrayNext[0]=cell;
+        }else{
+            cell->arrayNext[0]=temp->arrayNext[0];
+            temp->arrayNext[0]=cell;
         }
     }
+
 }
 
-void addCellToList(LevelList *list, Cell *cell){
-    for(int i=0;i<=cell->level;i++){
-        addCellToListByLevel(list,cell,i);
+/*
+void attributeLevels(LevelList *list){
+    Levels levelTab = createLevelsTab(list->maxLevel)
+}*/
+
+
+
+void addLevelToList(LevelList *list, Levels *levels){
+    addLevelToCells(list->heads[0],levels);
+}
+
+void updateLevelList(LevelList *list){
+    for(int i=1;i<=list->maxLevel;i++){
+        Cell* temp=list->heads[0];
+        while(temp->level!=i){
+            temp=temp->arrayNext[0];
+        }
+        list->heads[i]=temp;
+        Cell *headtemp=list->heads[i];
+        while(temp!=NULL){
+            temp=temp->arrayNext[0];
+            if(temp !=NULL && temp->level>=i){
+                headtemp->arrayNext[i]=temp;
+                headtemp=headtemp->arrayNext[i];
+            }
+
+        }
+        headtemp->arrayNext[i]=NULL;
     }
+
+
 }

@@ -8,6 +8,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
+#include "level.h"
 
 
 typedef struct Cell{
@@ -17,6 +18,8 @@ typedef struct Cell{
 }Cell;
 
 
-Cell* createCell(int value,int level);
+Cell* createCell(int value);
+void addLevelToCells(Cell* cell,Levels* levels);
+
 
 #endif //GESTIONAGENDA_CELL_H

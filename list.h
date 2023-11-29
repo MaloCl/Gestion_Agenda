@@ -5,19 +5,20 @@
 #ifndef GESTIONAGENDA_LIST_H
 #define GESTIONAGENDA_LIST_H
 #include "cell.h"
+#include "level.h"
 
 typedef struct LevelList{
     int maxLevel;
-    int lastPosition;
     Cell **heads;
 }LevelList;
 
-LevelList *createLevelList(int maxLevel);
+LevelList *createLevelList(int nbcases);
 //void addHeadCellToList(LevelList *list,Cell *cell);
 void displayByLevelList(LevelList *list,int level);
 void displayAllLevelList(LevelList *list);
-void addCellToListByLevel(LevelList *list,Cell *cell,int level);
-void addCellToList(LevelList *list, Cell *cell);
-void displayByLevelListJolie(LevelList *list,int level);
+void addCellToListLeveLZero(LevelList *list,Cell *cell);
+void attributeLevels(LevelList *list);
+void addLevelToList(LevelList *list, Levels *levels);
+void updateLevelList(LevelList *list);
 
 #endif //GESTIONAGENDA_LIST_H

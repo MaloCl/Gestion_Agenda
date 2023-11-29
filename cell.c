@@ -5,16 +5,11 @@
 #include "cell.h"
 
 
-Cell *createCell(int value,int level){
+Cell *createCell(int value){
     Cell *newcell=(Cell*)malloc(sizeof(Cell));
-    newcell->arrayNext=(Cell**)malloc((level+1)*sizeof (Cell*));
-
-    for(int i=0;i<level+1;i++){
-        newcell->arrayNext[i]=NULL;
-    }
-
-
+    newcell->arrayNext=(Cell**)malloc(sizeof (Cell*));
+    newcell->arrayNext[0]=NULL;
     newcell->value=value;
-    newcell->level=level;
+    newcell->level=0;
     return newcell;
 }

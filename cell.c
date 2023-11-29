@@ -19,6 +19,9 @@ void addLevelToCells(Cell* cell,Levels* levels){
     int i=0;
     while(temp!=NULL){
         temp->level=levels->tabLevel[i];
+        if (temp->level != 0) {
+            temp->arrayNext = (Cell **) realloc(temp->arrayNext, (temp->level + 1) * (sizeof(Cell *)));
+        }
         temp=temp->arrayNext[0];
         i++;
     }

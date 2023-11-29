@@ -12,4 +12,6 @@ add_executable(GestionAgenda main.c
         list.h
         level.c
         level.h
+        recherche.c
+        recherche.h
 )

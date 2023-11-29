@@ -13,3 +13,13 @@ Cell *createCell(int value){
     newcell->level=0;
     return newcell;
 }
+
+void addLevelToCells(Cell* cell,Levels* levels){
+    Cell* temp=cell;
+    int i=0;
+    while(temp!=NULL){
+        temp->level=levels->tabLevel[i];
+        temp=temp->arrayNext[0];
+        i++;
+    }
+}

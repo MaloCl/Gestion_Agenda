@@ -21,4 +21,6 @@ void attributeLevels(LevelList *list);
 void addLevelToList(LevelList *list, Levels *levels);
 void updateLevelList(LevelList *list);
 
+void createNCells(int numberOfValue,LevelList *list);
+
 #endif //GESTIONAGENDA_LIST_H

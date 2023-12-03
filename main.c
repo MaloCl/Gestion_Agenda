@@ -1,5 +1,6 @@
 #include "list.h"
 #include "level.h"
+#include "recherche.h"
 
 
 int main() {
@@ -29,6 +30,15 @@ int main() {
     printf("\n");
     printf("\n");
 
+    printf("t2");
+    printf("\n");
+
+    startTimer();
+    for(int i=0;i<100000;i++){
+        Cell* tmp = searchValueDichotomiqueInList(rand()%200000,testList);
+    }
+    stopTimer();
+    displayTime();
 
 
 

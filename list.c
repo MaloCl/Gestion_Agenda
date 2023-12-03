@@ -76,7 +76,6 @@ void addCellToListLeveLZero(LevelList *list,Cell *cell){
             temp->arrayNext[0]=cell;
         }
     }
-
 }
 
 /*

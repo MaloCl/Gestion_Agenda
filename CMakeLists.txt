@@ -14,4 +14,12 @@ add_executable(GestionAgenda main.c
         level.h
         recherche.c
         recherche.h
+        contact.c
+        contact.h
+        agenda.c
+        agenda.h
+        appointment.c
+        appointment.h
+        listAppointment.c
+        listAppointment.h
 )

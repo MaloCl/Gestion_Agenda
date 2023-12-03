@@ -111,3 +111,16 @@ void updateLevelList(LevelList *list){
 
 
 }
+
+void createNCells(int numberOfValue,LevelList *list){
+     for(int i=0;i<numberOfValue;i++){
+         addCellToListLeveLZero(list,createCell(i));
+         if(i==numberOfValue*1/4){
+             printf("25% ");
+         }else if(i==numberOfValue*2/4){
+             printf("50% ");
+         }else if(i==numberOfValue*3/4){
+             printf("75%");
+         }
+     }
+ }

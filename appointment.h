@@ -13,13 +13,13 @@ typedef struct Appointment{
     int year;
     int duration;
     int dateHour;
-    char* objectives;
-};
+    char* subject;
+}Appointment;
 
 typedef struct CellAppointment{
     struct Appointment* value;
-    struct Appointment** arrayNext;
-};
+    struct CellAppointment* next;
+}CellAppointment;
 
 Appointment *createAppointment();
 void deleteAppointment(Appointment *rdv);

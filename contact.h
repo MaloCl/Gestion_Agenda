@@ -4,10 +4,13 @@
 
 #ifndef GESTIONAGENDA_CONTACT_H
 #define GESTIONAGENDA_CONTACT_H
+#include "nv.h"
 
 typedef struct Contact {
-    char name[30];
-};
+    char *firstName;
+    char *lastName;
+    char *fullName;
+}Contact;
 
 Contact *createContact();
 #endif //GESTIONAGENDA_CONTACT_H

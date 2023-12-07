@@ -7,7 +7,13 @@
 #include "appointment.h"
 
 typedef struct llcAppointment{
-    struct Appointment** heads;
-};
+    CellAppointment* heads;
+    CellAppointment* last;
+}llcAppointment;
+
+
+
+
+
 
 #endif //GESTIONAGENDA_LISTAPPOINTMENT_H

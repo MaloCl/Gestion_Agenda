@@ -4,8 +4,8 @@
 
 #ifndef GESTIONAGENDA_AGENDA_H
 #define GESTIONAGENDA_AGENDA_H
-#include "contact.h"
-#include "appointment.h"
+#include "listAppointment.h"
+
 
 typedef struct AgendaCell{
     Contact *value;

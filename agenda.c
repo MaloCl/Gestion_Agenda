@@ -4,6 +4,12 @@
 
 #include "agenda.h"
 
+Agenda *createAgenda(){
+    Agenda *newAgenda = (Agenda*)malloc(sizeof(Agenda));
+    newAgenda->head=NULL;
+    return newAgenda;
+}
+
 AgendaCell *createAgendaCell(Contact *guy){
     AgendaCell *newCell=(AgendaCell*)malloc(sizeof (AgendaCell));
     newCell->value=guy;

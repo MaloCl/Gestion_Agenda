@@ -4,6 +4,7 @@
 
 #ifndef GESTIONAGENDA_LISTAPPOINTMENT_H
 #define GESTIONAGENDA_LISTAPPOINTMENT_H
+#include "appointment.h"
 
 typedef struct llcAppointment{
     struct Appointment** heads;

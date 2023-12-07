@@ -22,4 +22,10 @@ add_executable(GestionAgenda main.c
         appointment.h
         listAppointment.c
         listAppointment.h
+        nv.c
+        nv.h
+        levelNameAgenda.c
+        levelNameAgenda.h
+        menu.c
+        menu.h
 )

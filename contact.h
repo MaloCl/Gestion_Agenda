@@ -9,5 +9,5 @@ typedef struct Contact {
     char name[30];
 };
 
-
+Contact *createContact();
 #endif //GESTIONAGENDA_CONTACT_H

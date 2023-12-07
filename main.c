@@ -1,10 +1,16 @@
-#include "list.h"
-#include "level.h"
-#include "recherche.h"
 
+#include "menu.h"
 
 int main() {
 
+
+
+
+
+    
+
+
+/*
     LevelList *testList= createLevelList(200000);
     createNCells(200000,testList);
 
@@ -39,6 +45,31 @@ int main() {
     }
     stopTimer();
     displayTime();
+*/
+
+/*  PART 3
+    Agenda *agenda = createAgenda();
+    Contact *ashraf = createContact();
+    Contact *malo = createContact();
+    Contact *zizou = createContact();
+    Contact *zizi = createContact();
+    addContactToAgenda(agenda,ashraf);
+    addContactToAgenda(agenda,zizou);
+    addContactToAgenda(agenda,malo);
+    addContactToAgenda(agenda,zizi);
+    updateLevelToContactInAgenda(agenda);
+    linkAgendaCellByLevel(agenda);
+
+    researchContact(agenda);
+*/
+
+
+    AgendaCell *agenda= createAgenda();
+    while(1){
+        int choice = functionMenu();
+        switchChoice(choice,agenda);
+    }
+
 
 
 

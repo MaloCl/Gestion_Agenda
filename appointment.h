@@ -4,6 +4,8 @@
 
 #ifndef GESTIONAGENDA_APPOINTMENT_H
 #define GESTIONAGENDA_APPOINTMENT_H
+#include "nv.h"
+#include "contact.h"
 
 typedef struct Appointment{
     int day;
@@ -14,10 +16,14 @@ typedef struct Appointment{
     char* objectives;
 };
 
-typedef struct llcCellAppointment{
+typedef struct CellAppointment{
     struct Appointment* value;
     struct Appointment** arrayNext;
 };
+
+Appointment *createAppointment();
+void deleteAppointment(Appointment *rdv);
+CellAppointment *createCellAppointment();
 
 
 

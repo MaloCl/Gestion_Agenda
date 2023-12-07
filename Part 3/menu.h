@@ -9,6 +9,6 @@
 
 
 int functionMenu();
-void switchChoice(int choice,Agenda* agenda);
+void switchChoice(int choice,Agenda* agenda, int* status);
 
 #endif //GESTIONAGENDA_MENU_H

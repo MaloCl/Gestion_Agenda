@@ -5,7 +5,7 @@
 #ifndef GESTIONAGENDA_RECHERCHE_H
 #define GESTIONAGENDA_RECHERCHE_H
 #include "list.h"
-#include "timer.h"
+#include "../Part 3/timer.h"
 
 
 Cell *searchingValueLevel0(LevelList *list, int value);

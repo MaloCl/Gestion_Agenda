@@ -17,5 +17,6 @@ Contact *createContact(){
     largetemp=strcat(temp,"_");
     largetemp= strcat(largetemp,person->firstName);
     strcpy(person->fullName,largetemp);
+    clear();
     return person;
 }

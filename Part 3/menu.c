@@ -12,6 +12,9 @@ int functionMenu(){
         printf("Pour voir les rendez-vous d'une personne, saisir 2\n");
         printf("Pour creer un contact, saisir 3\n");
         printf("Pour creer un rendez-vous pour un contact, saisir 4\n");
+        printf("Pour afficher les rendez-vous d'un contact, saisir 5\n");
+        printf("Pour suprimer un rdv, saisir 6\n");
+        printf("Pour quitter, saisir 7\n");
         printf("Que faire : ");
         scanf("%d",&answer);
         fflush(stdin);
@@ -19,8 +22,9 @@ int functionMenu(){
     return answer;
 }
 
-void switchChoice(int choice,Agenda* agenda){
-
+void switchChoice(int choice,Agenda* agenda, int* status){
+    int i=0;
+    CellAppointment *appoint;
     switch (choice) {
         case 1:
             autoCompletionContact(agenda);
@@ -37,6 +41,29 @@ void switchChoice(int choice,Agenda* agenda){
         case 4:
             printf("Saisir le contact (nom_prenom) pour ajouter un rdv: ");
             addAppointmenttoContacttoAgenda(agenda,scanString());
+            clear();
+            break;
+        case 5:
+            printf("Saisir le contact (nom_prenom) pour ajouter un rdv: ");
+            displayAppointmentByContact(researchContact(agenda));
+            break;
+        case 6:
+            printf("Saisir le contact (nom_prenom) pour suprimer le rdv: ");
+            AgendaCell *contact = researchContact(agenda);
+            displayAppointmentByContact(contact);
+            if(contact->appointments!=NULL){
+                printf("Choix du rendez-vous a suprimer: ");
+                scanf("%d",&i);
+                fflush(stdin);
+                appoint=contact->appointments->heads;
+                for(int j=0;j<i;j++){
+                    appoint=appoint->next;
+                }
+                delFromList(contact->appointments,appoint);
+            }
+            break;
+        case 7:
+            *status = 0;
             break;
         default:
     }

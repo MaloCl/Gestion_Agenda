@@ -11,6 +11,8 @@ typedef struct llcAppointment{
     CellAppointment* last;
 }llcAppointment;
 
+void delCellFromList(CellAppointment *cell);
+void delFromList(llcAppointment *appointments, CellAppointment *cell);
 
 
 

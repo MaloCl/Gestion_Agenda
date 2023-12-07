@@ -83,12 +83,15 @@ void autoCompletionContact(Agenda *agenda){
         temp=temp->arrayNext[1];
     }
     if(temp==NULL || temp->value->fullName[0]!=first3letters[0] ){
-        printf("pas la mais t ou mais t pas la\n");
+        clear();
+        printf("Personne non trouve.\n\n");
     }else{
+        clear();
         while (temp!=NULL && temp->value->fullName[2]==first3letters[2]){
             printf("%s \n",temp->value->fullName);
             temp=temp->arrayNext[0];
         }
+        printf("\n");
     }
 }
 
@@ -115,14 +118,20 @@ AgendaCell *researchContact(Agenda *agenda){
 
 void displayAppointmentByContact(AgendaCell *cell){
     if(cell==NULL){
-        printf("Contact introuvable dans la liste\n");
+        clear();
+        printf("Contact introuvable dans la liste\n\n");
     }else{
         CellAppointment *temp = cell->appointments->heads;
         if(temp==NULL){
-            printf("Aucun rendez-vous.\n");
+            clear();
+            printf("Aucun rendez-vous.\n\n");
         }
         else{
+            clear();
+            int i=0;
             while(temp!=NULL){
+                i++;
+                printf("RDV numéro %d\n",i);
                 printf("jour : %d\n",temp->value->day);
                 printf("mois : %d\n",temp->value->month);
                 printf("annee : %d\n",temp->value->year);

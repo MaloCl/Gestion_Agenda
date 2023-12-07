@@ -26,13 +26,15 @@ void displayAppointmentByContact(AgendaCell *cell);
 
 void addContactToAgenda(Agenda *agenda, Contact *person);
 
-void addAppointmentToContact(char fullName[30],AgendaCell *cell);
+void addAppointmentToContact(char fullName[60],AgendaCell *cell);
 
 void addAppointmenttoContacttoAgenda(Agenda *agenda,char fullName[60]);
 
 void autoCompletionContact(Agenda *agenda);
 
 AgendaCell *researchContact(Agenda *agenda);
+
+
 
 
 

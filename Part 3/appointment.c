@@ -7,33 +7,34 @@
 Appointment *createAppointment(){
     Appointment *rdv = (Appointment*) malloc(sizeof(Appointment));
     do{
-        printf("Enter day of appointment:");
+        printf("Entrer le jour:");
         scanf("%d",&(rdv->day));
     }while(rdv->day <=0 || rdv->day >=31);
 
 
     do{
-        printf("Enter month of appointment:");
+        printf("Entrer le mois:");
         scanf("%d",&(rdv->month));
     }while(rdv->month>12 || rdv->month <1);
 
     do{
-        printf("Enter year of appointment;");
+        printf("Entrer l'annee:");
         scanf("%d",&(rdv->year));
     }while(rdv->year<=0);
 
     do{
-        printf("Enter the duration of appointment:");
+        printf("Entrer le temps du rdv:");
         scanf("%d",&(rdv->duration));
     }while(rdv->duration<=0);
 
     do{
-        printf("Enter the hour of the appointment:");
+        printf("Entrer l'heure du rdv:");
         scanf("%d",&(rdv->dateHour));
     }while(rdv->dateHour<=0);
 
-    printf("Enter subject of the appointment");
+    printf("Entrer le sujet du rdv:");
     rdv->subject=scanString();
+    clear();
     return rdv;
 }
 

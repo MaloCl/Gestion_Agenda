@@ -1,14 +1,9 @@
 
-#include "menu.h"
+#include "Part 3/menu.h"
+
+
 
 int main() {
-
-
-
-
-
-    
-
 
 /*
     LevelList *testList= createLevelList(200000);
@@ -63,13 +58,18 @@ int main() {
     researchContact(agenda);
 */
 
-
+    int* status = (int*)malloc(sizeof(int));
+    int choice;
+    *(status)=1;
     AgendaCell *agenda= createAgenda();
-    while(1){
-        int choice = functionMenu();
-        switchChoice(choice,agenda);
+    while(*status){
+        choice = functionMenu();
+        switchChoice(choice,agenda,status);
+
+
     }
 
+    printf("Merci d'avoir utilisé cet agenda !");
 
 
 

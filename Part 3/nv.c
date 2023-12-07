@@ -23,4 +23,8 @@ char* scanString(){
     return word;
 }
 
-
+int clear(){
+    for(int i=0;i<20;i++){
+        printf("\n");
+    }
+}

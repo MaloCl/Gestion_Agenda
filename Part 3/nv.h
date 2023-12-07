@@ -9,5 +9,6 @@
 #include <string.h>
 
 char* scanString();
+int clear();
 
 #endif //GESTIONAGENDA_NV_H

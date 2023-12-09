@@ -12,9 +12,8 @@ int functionMenu(){
         printf("Pour voir les rendez-vous d'une personne, saisir 2\n");
         printf("Pour creer un contact, saisir 3\n");
         printf("Pour creer un rendez-vous pour un contact, saisir 4\n");
-        printf("Pour afficher les rendez-vous d'un contact, saisir 5\n");
-        printf("Pour suprimer un rdv, saisir 6\n");
-        printf("Pour quitter, saisir 7\n");
+        printf("Pour suprimer un rdv, saisir 5\n");
+        printf("Pour quitter, saisir 6\n");
         printf("Que faire : ");
         scanf("%d",&answer);
         fflush(stdin);
@@ -44,10 +43,6 @@ void switchChoice(int choice,Agenda* agenda, int* status){
             clear();
             break;
         case 5:
-            printf("Saisir le contact (nom_prenom) pour ajouter un rdv: ");
-            displayAppointmentByContact(researchContact(agenda));
-            break;
-        case 6:
             printf("Saisir le contact (nom_prenom) pour suprimer le rdv: ");
             AgendaCell *contact = researchContact(agenda);
             displayAppointmentByContact(contact);
@@ -62,7 +57,7 @@ void switchChoice(int choice,Agenda* agenda, int* status){
                 delFromList(contact->appointments,appoint);
             }
             break;
-        case 7:
+        case 6:
             *status = 0;
             break;
         default:

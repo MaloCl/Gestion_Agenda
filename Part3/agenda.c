@@ -39,8 +39,8 @@ void addContactToAgenda(Agenda *agenda, Contact *guy){
         if(temp==NULL){
             prev->arrayNext[0]=newContact;
         }else if(strcmp(newContact->value->fullName,temp->value->fullName)==-1){
+            newContact->arrayNext[0]=prev->arrayNext[0];
             prev->arrayNext[0]=newContact;
-            newContact->arrayNext[0]=temp;
         }
     }
 }

@@ -54,8 +54,9 @@ void linkAgendaCellByLevel(Agenda *agenda){
             tempLevel0=tempLevel0->arrayNext[0];
             if(tempLevel0->level>=i){
                 tempLevelX->arrayNext[i]=tempLevel0;
+                tempLevelX=tempLevelX->arrayNext[i];
             }
-            tempLevelX=tempLevelX->arrayNext[i];
+
         }
         if(tempLevelX!=NULL){
             tempLevelX->arrayNext[i]=NULL;

@@ -6,9 +6,9 @@
 
 Contact *createContact(){
     Contact *person = (Contact*) malloc(sizeof(Contact));
-    printf("Enter Firstname :");
+    printf("Entrer le prenom :");
     person->firstName=scanString();
-    printf("Enter Lastname :");
+    printf("Entrer le nom de famille :");
     person->lastName=scanString();
     char temp[30];
     strcpy(temp,person->lastName);
@@ -18,5 +18,13 @@ Contact *createContact(){
     largetemp= strcat(largetemp,person->firstName);
     strcpy(person->fullName,largetemp);
     clear();
+    return person;
+}
+
+Contact *createContactWithValues(char firstName[30],char lastName[30],char fullName[60]){
+    Contact *person = (Contact*) malloc(sizeof(Contact));
+    person->firstName=firstName;
+    person->lastName=lastName;
+    person->fullName=fullName;
     return person;
 }

@@ -1,28 +1,32 @@
 
-#include "Part 3/menu.h"
-
+#include "Part3/menu.h"
+#include "Part3/docsFunction.h"
+#include "Part2/recherche.h"
+#include "timer.h"
 
 
 int main() {
 
 /*
-    LevelList *testList= createLevelList(200000);
-    createNCells(200000,testList);
+    LevelList *testList= createLevelList(500000);
+    createNCells(500000,testList);
 
-    Levels* levels= createLevelsTab(200000);
+    Levels* levels= createLevelsTab(500000);
     getTabLevel(levels);
 
     addLevelToList(testList,levels);
     updateLevelList(testList);
+    printf("\n");
     //displayAllLevelList(testList);
     printf("\n");
+
 
     printf("t");
     printf("\n");
 
     startTimer();
-    for(int i=0;i<100000;i++){
-        Cell* searchedCell=searchingValueLevel0(testList,rand()%200000);
+    for(int i=0;i<200000;i++){
+        Cell* searchedCell=searchingValueLevel0(testList,rand()%500000);
     }
     stopTimer();
     displayTime();
@@ -35,8 +39,8 @@ int main() {
     printf("\n");
 
     startTimer();
-    for(int i=0;i<100000;i++){
-        Cell* tmp = searchValueDichotomiqueInList(rand()%200000,testList);
+    for(int i=0;i<200000;i++){
+        Cell* tmp = searchValueDichotomiqueInList(rand()%2500000,testList);
     }
     stopTimer();
     displayTime();
@@ -58,10 +62,25 @@ int main() {
     researchContact(agenda);
 */
 
+
+
+
     int* status = (int*)malloc(sizeof(int));
     int choice;
     *(status)=1;
-    AgendaCell *agenda= createAgenda();
+    Agenda *agenda= createAgenda();
+    char* lastname;
+    char* firstname;
+    char* fullname;
+    Contact *person;
+    for(int i=0;i<100;i++){
+        lastname=getLastNameFromDoc(rand()%10000);
+        firstname=getFirstNameFromDoc(rand()%10000);
+        fullname = makeFullName(lastname,firstname);
+        person = createContactWithValues(firstname,lastname,fullname);
+        addContactToAgenda(agenda, person );
+    }
+
     while(*status){
         choice = functionMenu();
         switchChoice(choice,agenda,status);
@@ -70,6 +89,7 @@ int main() {
     }
 
     printf("Merci d'avoir utilisé cet agenda !");
+
 
 
 

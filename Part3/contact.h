@@ -13,4 +13,5 @@ typedef struct Contact {
 }Contact;
 
 Contact *createContact();
+Contact *createContactWithValues(char firstName[30],char lastName[30],char fullName[60]);
 #endif //GESTIONAGENDA_CONTACT_H

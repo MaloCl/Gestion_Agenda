@@ -60,7 +60,7 @@ int main() {
     char* firstname;
     char* fullname;
     Contact *person;
-    for(int i=0;i<100;i++){
+    for(int i=0;i<1000;i++){
         lastname=getLastNameFromDoc(rand()%10000);
         firstname=getFirstNameFromDoc(rand()%10000);
         fullname = makeFullName(lastname,firstname);

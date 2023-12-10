@@ -131,7 +131,7 @@ void displayAppointmentByContact(AgendaCell *cell){
             int i=0;
             while(temp!=NULL){
                 i++;
-                printf("RDV numéro %d\n",i);
+                printf("RDV numero %d\n",i);
                 printf("jour : %d\n",temp->value->day);
                 printf("mois : %d\n",temp->value->month);
                 printf("annee : %d\n",temp->value->year);

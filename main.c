@@ -7,7 +7,7 @@
 
 int main() {
 
-/*
+/* PART 1/2
     LevelList *testList= createLevelList(500000);
     createNCells(500000,testList);
 
@@ -47,19 +47,6 @@ int main() {
 */
 
 /*  PART 3
-    Agenda *agenda = createAgenda();
-    Contact *ashraf = createContact();
-    Contact *malo = createContact();
-    Contact *zizou = createContact();
-    Contact *zizi = createContact();
-    addContactToAgenda(agenda,ashraf);
-    addContactToAgenda(agenda,zizou);
-    addContactToAgenda(agenda,malo);
-    addContactToAgenda(agenda,zizi);
-    updateLevelToContactInAgenda(agenda);
-    linkAgendaCellByLevel(agenda);
-
-    researchContact(agenda);
 */
 
 

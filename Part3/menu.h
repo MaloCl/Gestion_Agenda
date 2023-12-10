@@ -8,7 +8,8 @@
 #include "levelNameAgenda.h"
 
 
-int functionMenu();
-void switchChoice(int choice,Agenda* agenda, int* status);
+int functionMenu();//Affiche les choix possible
+
+void switchChoice(int choice,Agenda* agenda, int* status);//Réalise la bonne action en fonction du choix
 
 #endif //GESTIONAGENDA_MENU_H

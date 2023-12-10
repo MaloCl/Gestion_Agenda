@@ -6,8 +6,9 @@
 #define GESTIONAGENDA_LEVELNAMEAGENDA_H
 #include "agenda.h"
 
-void updateLevelToContactInAgenda(Agenda *agenda);
-void linkAgendaCellByLevel(Agenda *agenda);
+void updateLevelToContactInAgenda(Agenda *agenda);//Permet de donné les niveau adapté au contacts
+
+void linkAgendaCellByLevel(Agenda *agenda);//Permet de creer les listes chainés de chaque niveau
 
 
 

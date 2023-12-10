@@ -12,6 +12,7 @@ typedef struct Contact {
     char *fullName;
 }Contact;
 
-Contact *createContact();
-Contact *createContactWithValues(char firstName[30],char lastName[30],char fullName[60]);
+Contact *createContact();//Permet de creer un contact en demander les valeurs
+
+Contact *createContactWithValues(char firstName[30],char lastName[30],char fullName[60]);//Permet de creer un contact avec toute les valeur donné en parametre (pour l'importation des fichiers)
 #endif //GESTIONAGENDA_CONTACT_H

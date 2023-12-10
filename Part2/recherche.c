@@ -13,7 +13,9 @@ Cell *searchingValueLevel0(LevelList *list, int value){
     return temp;
 
 }
-
+/*Cherche une valeur dans la liste,
+ si la valeur temporaire est supérieur a celle qu'on cherche on relance en niveau inférieur a partir du début
+ si la valeur temporaire est inférieur a celle qu'on cherche on relance en niveau inférieur a partir de la valeur temporaire*/
 Cell *searchValueDichotomique(Cell* cell, int value,int level, LevelList *list){
     Cell* tmp = cell;
     if(cell->value==value) {
@@ -29,11 +31,7 @@ Cell *searchValueDichotomique(Cell* cell, int value,int level, LevelList *list){
         }else if(tmp->value<value){
             searchValueDichotomique(tmp,value,level-1,list);
         }
-
-
-
     }
-
 }
 
 Cell *searchValueDichotomiqueInList(int value, LevelList *list){

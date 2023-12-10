@@ -15,9 +15,12 @@ typedef struct Levels{
 }Levels;
 
 
-Levels *createLevelsTab(int nbCase);
-void getTabLevel(Levels *levels);
-int calculLevel(int maxCases);
-void printTab(Levels *levels);
+Levels *createLevelsTab(int nbCase);//Creer un tableau ou sera stocké le niveau de chaque Nème valeurs
+
+void getTabLevel(Levels *levels);//Ajoute les niveau dans le tableau
+
+int calculLevel(int maxCases);//Donne le niveau maximal en focntion du nombre de case donné
+
+void printTab(Levels *levels);//affiche le tableau des niveaux (pour verifier qu'il fonctionne correctement)
 
 #endif //GESTIONAGENDA_LEVEL_H

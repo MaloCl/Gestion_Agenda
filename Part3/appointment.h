@@ -21,9 +21,11 @@ typedef struct CellAppointment{
     struct CellAppointment* next;
 }CellAppointment;
 
-Appointment *createAppointment();
-void deleteAppointment(Appointment *rdv);
-CellAppointment *createCellAppointment();
+Appointment *createAppointment();//Permet de creer un rendez vous
+
+void deleteAppointment(Appointment *rdv);//Permet de suprimer un rendez vous
+
+CellAppointment *createCellAppointment();//Permet de creer une cellule de rendez vous pour la liste chainé
 
 
 

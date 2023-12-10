@@ -11,7 +11,7 @@ typedef struct llcAppointment{
     CellAppointment* last;
 }llcAppointment;
 
-void delCellFromList(CellAppointment *cell,llcAppointment *appointments);
+void delCellFromList(CellAppointment *cell,llcAppointment *appointments);//Permet de suprimmer une cellule de rendez vous
 
 
 

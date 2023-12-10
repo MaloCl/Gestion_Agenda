@@ -20,19 +20,21 @@ typedef struct Agenda{
 
 
 
-AgendaCell *createAgendaCell(Contact *guy);
-Agenda *createAgenda();
-void displayAppointmentByContact(AgendaCell *cell);
+AgendaCell *createAgendaCell(Contact *guy);//Permet de creer une nouvelle cellule de l'agenda
 
-void addContactToAgenda(Agenda *agenda, Contact *person);
+Agenda *createAgenda();//Permet de creer un nouvel agenda
 
-void addAppointmentToContact(char fullName[60],AgendaCell *cell);
+void displayAppointmentByContact(AgendaCell *cell);//Permet d'afficher tout les rendez vous d'un contact donné
 
-void addAppointmenttoContacttoAgenda(Agenda *agenda,char fullName[60]);
+void addContactToAgenda(Agenda *agenda, Contact *person);//Permet d'ajouter un contact dans l'agenda
 
-void autoCompletionContact(Agenda *agenda);
+void addAppointmentToContact(char fullName[60],AgendaCell *cell);//Permet d'ajouter un rendez vous a un contact
 
-AgendaCell *researchContact(Agenda *agenda);
+void addAppointmenttoContacttoAgenda(Agenda *agenda,char fullName[60]);//Permet d'ajouter un rendez vous a un contact a partir de l'agenda
+
+void autoCompletionContact(Agenda *agenda);//Permet de donné tout les prenoms commençant par les 3 lettre donné
+
+AgendaCell *researchContact(Agenda *agenda);//Permet de cherrcher un contact dans l'agenda
 
 
 

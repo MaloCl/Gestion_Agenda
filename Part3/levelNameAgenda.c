@@ -17,7 +17,13 @@ int checkThirdLetter(char*a,char*b){
   return a[2]==b[2];
 }
 
+/*Donne le niveau a chaque contact
+  Si le prochain nom a les 3 premieres lettres differentes son niveau est 3
+  Si le prochain nom a la meme premiere lettre mais les 2 suivantes différentes son niveau est 2
+  Si le prochain nom a les 2 meme premieres lettre mais la suivante différente son niveau est 1
+  Si le prochain nom a les 3 premieres lettre les meme son niveau est 0
 
+ */
 void updateLevelToContactInAgenda(Agenda *agenda){
     AgendaCell *temp = agenda->head;
     if(agenda!=NULL){

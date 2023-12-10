@@ -12,15 +12,20 @@ typedef struct LevelList{
     Cell **heads;
 }LevelList;
 
-LevelList *createLevelList(int nbcases);
-//void addHeadCellToList(LevelList *list,Cell *cell);
-void displayByLevelList(LevelList *list,int level);
-void displayAllLevelList(LevelList *list);
-void addCellToListLeveLZero(LevelList *list,Cell *cell);
-void attributeLevels(LevelList *list);
-void addLevelToList(LevelList *list, Levels *levels);
-void updateLevelList(LevelList *list);
+LevelList *createLevelList(int nbcases);//Creer les liste chaines de toute les valeurs
 
-void createNCells(int numberOfValue,LevelList *list);
+void displayByLevelList(LevelList *list,int level);//Affiche toute les valeurs d'un seul niveau
+
+void displayAllLevelList(LevelList *list);//Affiche toute les valeurs de tout les niveaux
+
+void addCellToListLeveLZero(LevelList *list,Cell *cell);//Ajoute une cellule de valeur au niveau 0
+
+void attributeLevels(LevelList *list);//Attribue le niveau a chaque valeur en fonction de sa position
+
+void addLevelToList(LevelList *list, Levels *levels);//Attribue les niveau a partir de la liste
+
+void updateLevelList(LevelList *list);//Creer la liste chainé de chaque niveau
+
+void createNCells(int numberOfValue,LevelList *list);//Creer N nombre de cellules et les ajoute dans la liste
 
 #endif //GESTIONAGENDA_LIST_H

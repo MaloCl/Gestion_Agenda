@@ -68,6 +68,16 @@ void addAppointmenttoContacttoAgenda(Agenda *agenda,char fullName[60]){
     addAppointmentToContact(fullName,agenda->head);
 }
 
+
+/*Affiche tout les contact qui comment par les 3 lettres données
+ Avance dans la liste au niveau 3 tant que la premiere lettre est différente
+ Puis
+ Avance dans la liste au niveau 2 tant que la deuxieme lettre est différente si la premiere lettre change il n'y as pas de valeur trouver
+ Puis
+ Avance dans la liste au niveau 1 tant que la troisieme lettre est différente si la premiere lettre change il n'y as pas de valeur trouver
+ Puis
+ Avance dans la liste au niveau 0 et affiche les valeurs tant que la premiere lettre ne change pas
+ */
 void autoCompletionContact(Agenda *agenda){
     printf("saisir 3 lettres a chercher:");
     char * first3letters = scanString();

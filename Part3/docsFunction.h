@@ -8,7 +8,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-char* getLastNameFromDoc(int line);
-char* getFirstNameFromDoc(int line);
-char* makeFullName(char lastName[30],char firstName[30]);
+char* getLastNameFromDoc(int line);//Permet de recuperer un nom dans le document des noms
+
+char* getFirstNameFromDoc(int line);//Permet de recuperer un prénom dans le document des prénoms
+
+char* makeFullName(char lastName[30],char firstName[30]);//Permet de creer un nom_prenom avec les données des documents
 #endif //GESTIONAGENDA_DOCSFUNCTION_H

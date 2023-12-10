@@ -8,7 +8,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-char* scanString();
-int clear();
+char* scanString();//Demande une chaine de charactere
+
+int clear();//Cleat la console ( 20 retours a la ligne)
 
 #endif //GESTIONAGENDA_NV_H

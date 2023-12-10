@@ -18,8 +18,9 @@ typedef struct Cell{
 }Cell;
 
 
-Cell* createCell(int value);
-void addLevelToCells(Cell* cell,Levels* levels);
+Cell* createCell(int value);//Creer une cellule
+
+void addLevelToCells(Cell* cell,Levels* levels);//Ajoute les niveau a chaque cellule grace au tablau de niveaux et change la taille du tableau de valeur suivante
 
 
 

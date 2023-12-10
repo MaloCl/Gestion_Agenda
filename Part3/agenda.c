@@ -18,7 +18,7 @@ AgendaCell *createAgendaCell(Contact *guy){
         newCell->arrayNext[i]=NULL;
     }
     newCell->appointments=(llcAppointment*) malloc(sizeof(llcAppointment));
-    newCell->appointments->heads=NULL;
+    newCell->appointments->head=NULL;
     newCell->appointments->last=NULL;
     newCell->level=0;
     return newCell;
@@ -51,9 +51,9 @@ void addAppointmentToContact(char fullName[60],AgendaCell *cell){
         temp=temp->arrayNext[0];
     }
     if(temp!=NULL){
-        if(temp->appointments->heads==NULL){
+        if(temp->appointments->head==NULL){
             CellAppointment *tempAppointment = createCellAppointment();
-            temp->appointments->heads = tempAppointment;
+            temp->appointments->head = tempAppointment;
             temp->appointments->last = tempAppointment;
         }else {
             CellAppointment *tempAppointment = createCellAppointment();
@@ -121,7 +121,7 @@ void displayAppointmentByContact(AgendaCell *cell){
         clear();
         printf("Contact introuvable dans la liste\n\n");
     }else{
-        CellAppointment *temp = cell->appointments->heads;
+        CellAppointment *temp = cell->appointments->head;
         if(temp==NULL){
             clear();
             printf("Aucun rendez-vous.\n\n");

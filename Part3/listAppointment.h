@@ -7,12 +7,12 @@
 #include "appointment.h"
 
 typedef struct llcAppointment{
-    CellAppointment* heads;
+    CellAppointment* head;
     CellAppointment* last;
 }llcAppointment;
 
-void delCellFromList(CellAppointment *cell);
-void delFromList(llcAppointment *appointments, CellAppointment *cell);
+void delCellFromList(CellAppointment *cell,llcAppointment *appointments);
+
 
 
 

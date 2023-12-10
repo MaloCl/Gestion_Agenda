@@ -46,15 +46,27 @@ void switchChoice(int choice,Agenda* agenda, int* status){
             printf("Saisir le contact (nom_prenom) pour suprimer le rdv: ");
             AgendaCell *contact = researchContact(agenda);
             displayAppointmentByContact(contact);
+
             if(contact->appointments!=NULL){
                 printf("Choix du rendez-vous a suprimer: ");
                 scanf("%d",&i);
                 fflush(stdin);
-                appoint=contact->appointments->heads;
-                for(int j=0;j<i;j++){
-                    appoint=appoint->next;
+                int maxi=0;
+                CellAppointment *temp = contact->appointments->head;
+                while(temp!=NULL){
+                    maxi++;
+                    temp=temp->next;
                 }
-                delFromList(contact->appointments,appoint);
+                if(i>maxi){
+                    printf("RDV pas dans la liste\n");
+                }else{
+                    appoint=contact->appointments->head;
+                    for(int j=1;j<i;j++){
+                        appoint=appoint->next;
+                    }
+                    delCellFromList(appoint,contact->appointments);
+                }
+
             }
             break;
         case 6:

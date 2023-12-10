@@ -8,6 +8,8 @@
 int main() {
 
 /* PART 1/2
+
+    printf("Creation des cellules\n");
     LevelList *testList= createLevelList(500000);
     createNCells(500000,testList);
 
@@ -25,8 +27,9 @@ int main() {
     printf("\n");
 
     startTimer();
+    Cell* searchedCell;
     for(int i=0;i<200000;i++){
-        Cell* searchedCell=searchingValueLevel0(testList,rand()%500000);
+        searchedCell=searchingValueLevel0(testList,rand()%500000);
     }
     stopTimer();
     displayTime();
@@ -39,18 +42,15 @@ int main() {
     printf("\n");
 
     startTimer();
+    Cell* searchedCell2;
     for(int i=0;i<200000;i++){
-        Cell* tmp = searchValueDichotomiqueInList(rand()%2500000,testList);
+        searchedCell2 = searchValueDichotomiqueInList(rand()%2500000,testList);
     }
     stopTimer();
     displayTime();
 */
 
-/*  PART 3
-*/
-
-
-
+/*  PART 3*/
 
     int* status = (int*)malloc(sizeof(int));
     int choice;
@@ -71,14 +71,9 @@ int main() {
     while(*status){
         choice = functionMenu();
         switchChoice(choice,agenda,status);
-
-
     }
 
     printf("Merci d'avoir utilisé cet agenda !");
-
-
-
 
 
     return 0;

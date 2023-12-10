@@ -78,13 +78,6 @@ void addCellToListLeveLZero(LevelList *list,Cell *cell){
     }
 }
 
-/*
-void attributeLevels(LevelList *list){
-    Levels levelTab = createLevelsTab(list->maxLevel)
-}*/
-
-
-
 void addLevelToList(LevelList *list, Levels *levels){
     addLevelToCells(list->heads[0],levels);
 }
@@ -115,11 +108,11 @@ void createNCells(int numberOfValue,LevelList *list){
      for(int i=0;i<numberOfValue;i++){
          addCellToListLeveLZero(list,createCell(i));
          if(i==numberOfValue*1/4){
-             printf("25% ");
+             printf("25%%\n");
          }else if(i==numberOfValue*2/4){
-             printf("50% ");
+             printf("50%%\n");
          }else if(i==numberOfValue*3/4){
-             printf("75%");
+             printf("75%%\n");
          }
      }
  }
